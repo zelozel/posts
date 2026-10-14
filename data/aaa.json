@@ -17,8 +17,9 @@
    "caption": "asdasd",
    "date": "",
    "time": "12:00",
-   "status": "pending",
-   "rv": 0
+   "status": "approved",
+   "rv": 1,
+   "feedback": ""
   }
  ]
 }

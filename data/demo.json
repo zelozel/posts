@@ -1,0 +1,73 @@
+{
+ "id": "c1",
+ "code": "demo",
+ "name": "Vó Alzira (exemplo)",
+ "handle": "fabricavoalzira",
+ "avatar": "",
+ "posts": [
+  {
+   "id": "p1",
+   "type": "feed",
+   "media": [
+    {
+     "kind": "art",
+     "t": "Bolo caseiro feito com carinho",
+     "c1": "#C6974D",
+     "c2": "#8F6426"
+    }
+   ],
+   "caption": "Aquele bolo que abraça a alma 🎂\nEncomende o seu e leve o sabor da casa da vovó para a sua mesa.\n\n#bolocaseiro #confeitariaartesanal #araruama #boloderolo #vóalzira",
+   "date": "2026-10-15",
+   "time": "12:00",
+   "status": "pending",
+   "rv": 0
+  },
+  {
+   "id": "p2",
+   "type": "carousel",
+   "media": [
+    {
+     "kind": "art",
+     "t": "Sabores da semana",
+     "c1": "#3D4F33",
+     "c2": "#2F3E27"
+    },
+    {
+     "kind": "art",
+     "t": "Ninho com morango",
+     "c1": "#C8101B",
+     "c2": "#8F1017"
+    },
+    {
+     "kind": "art",
+     "t": "Encomende pelo WhatsApp",
+     "c1": "#738669",
+     "c2": "#3D4F33"
+    }
+   ],
+   "caption": "Arrasta pro lado e escolhe o seu favorito 👉\nEncomendas pelo link da bio.\n\n#bolodepote #docesartesanais #lagosdoriodejaneiro #festaemcasa #bolodeaniversario",
+   "date": "2026-10-17",
+   "time": "18:30",
+   "status": "pending",
+   "rv": 0
+  },
+  {
+   "id": "p3",
+   "type": "reels",
+   "media": [
+    {
+     "kind": "art",
+     "t": "Bastidores da cozinha",
+     "c1": "#8F6426",
+     "c2": "#3D4F33"
+    }
+   ],
+   "caption": "Bastidores de quem faz com amor ❤️ Salva esse reels pra lembrar na hora da encomenda!\n\n#bastidores #confeitaria #cozinhaafetiva #bolodeverdade #fabricadebolo",
+   "date": "2026-10-20",
+   "time": "19:00",
+   "status": "pending",
+   "rv": 0
+  }
+ ],
+ "wa": "5522988746035"
+}

@@ -203,7 +203,7 @@ if(!ADMIN){
 const {$,esc,I,TIPO,ST,dm}=Z;
 let C=null,tab='posts',err='';
 const params=new URLSearchParams(location.search);
-const code=(params.get('c')||decodeURIComponent((location.hash||'').slice(1))||'').trim().replace(/[^\w-]/g,'');
+const code=(params.get('c')||decodeURIComponent((location.hash||'').slice(1))||'').trim().replace(/[^\w-]/g,'').toLowerCase();
 const LAk='zel_ap_'+code;
 const LA=()=>{try{return JSON.parse(Z.ls.get(LAk)||'{}')}catch(e){return{}}};
 function setDec(p,s,fb){const a=LA();if(s==null)delete a[p.id];else a[p.id]={s,fb:fb||'',rv:p.rv||0};Z.ls.set(LAk,JSON.stringify(a))}
@@ -260,7 +260,7 @@ document.addEventListener('click',e=>{
   else if(act==='askchg'){const bx=pw.querySelector('[data-fbbox]');bx.hidden=!bx.hidden;if(!bx.hidden)bx.querySelector('textarea').focus()}
   else if(act==='sendchg'){const v=pw.querySelector('textarea').value.trim();if(!v){Z.toast('Conte o que você quer mudar');return}setDec(post,'changes',v);render()}
   else if(act==='approveall'){C.posts.forEach(p=>{if(eff(p).s==='pending')setDec(p,'approved')});render();scrollTo({top:0,behavior:'smooth'})}
-  else if(act==='entercode'){const v=($('#codein').value||'').trim().replace(/[^\w-]/g,'');if(v)location.search='?c='+encodeURIComponent(v)}
+  else if(act==='entercode'){const v=($('#codein').value||'').trim().replace(/[^\w-]/g,'').toLowerCase();if(v)location.search='?c='+encodeURIComponent(v)}
 });
 render();
 if(code)fetch('data/'+code+'.json?v='+Date.now()).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{C=d;render()}).catch(()=>{err='Código não encontrado. Confira com a Zel.';render()});
@@ -398,7 +398,7 @@ document.addEventListener('click',e=>{
    case'open':run(()=>openClient(b.dataset.code));break;
    case'newclient':D={isNew:true,name:'',handle:'',code:Z.rnd(10),wa:'5522988746035',avatar:''};view='fclient';draw();break;
    case'editclient':D=Object.assign({isNew:false},JSON.parse(JSON.stringify({name:cur.name,handle:cur.handle,code:cur.code,wa:cur.wa||'',avatar:cur.avatar||''})));view='fclient';draw();break;
-   case'saveclient':{D.name=$('#f-name').value.trim();D.handle=$('#f-handle').value.trim().replace(/^@/,'');D.wa=$('#f-wa').value.replace(/\D/g,'');if(D.isNew)D.code=$('#f-code').value.trim().replace(/[^\w-]/g,'');
+   case'saveclient':{D.name=$('#f-name').value.trim();D.handle=$('#f-handle').value.trim().replace(/^@/,'');D.wa=$('#f-wa').value.replace(/\D/g,'');if(D.isNew)D.code=$('#f-code').value.trim().replace(/[^\w-]/g,'').toLowerCase();
      if(!D.name||!D.handle||!D.code){Z.toast('Preencha nome, @ e código');break}
      if(D.isNew&&index.some(x=>x.code===D.code)){Z.toast('Esse código já existe');break}
      const d=D;run(async()=>{
